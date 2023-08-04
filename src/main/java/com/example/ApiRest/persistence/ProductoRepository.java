@@ -35,12 +35,7 @@ public class ProductoRepository implements ProducRepository{
         return this.mapper.toProducts(products);
     }
 
-    @Override
-    public Optional<List<Product>> getByCategory(int categoryId) {
-        List<Producto> productos = productCrudRepository.findByIdCategoriaOrderByNombreAsc(categoryId);
-        return Optional.of(mapper.toProducts(productos));
-    }
-
+  
     @Override
     public Optional<List<Product>> getByScarseProduct(int quantity) {
         Optional<List<Producto>> productos = productCrudRepository.findByCantidadStockLessThanAndEstado(quantity, true);

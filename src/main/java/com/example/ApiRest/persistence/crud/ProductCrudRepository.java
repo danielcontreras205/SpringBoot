@@ -20,7 +20,5 @@ import java.util.Optional;
 //public interface ProductCrudRepository extends JpaRepository<Producto,Integer> {
 public interface ProductCrudRepository extends CrudRepository<Producto,Integer> {
     
-    List<Producto> findByIdCategoriaOrderByNombreAsc(int idCategoria);
-    
     Optional<List<Producto>> findByCantidadStockLessThanAndEstado(int CantidadStock, boolean estado);
 }

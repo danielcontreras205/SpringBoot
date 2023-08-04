@@ -16,7 +16,6 @@ public interface ProducRepository {
     
     List<Product> getAll();
     
-    Optional<List<Product>> getByCategory(int categoryId);
     
     Optional<List<Product>> getByScarseProduct(int quantity);
     

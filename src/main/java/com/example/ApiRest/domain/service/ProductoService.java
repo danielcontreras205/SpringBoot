@@ -30,10 +30,6 @@ public class ProductoService {
         return productRepository.getProduct(productId);
     }
 
-    public Optional<List<Product>> getByCategory(int categoryId){
-        return productRepository.getByCategory(categoryId);
-    }
-
     public Product save(Product product){
         return productRepository.save(product);
     }
