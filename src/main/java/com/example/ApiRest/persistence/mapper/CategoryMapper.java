@@ -2,6 +2,7 @@ package com.example.ApiRest.persistence.mapper;
 
 import com.example.ApiRest.domain.Category;
 import com.example.ApiRest.persistence.entity.Categoria;
+import java.util.List;
 import org.mapstruct.InheritInverseConfiguration;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
@@ -15,7 +16,9 @@ public interface CategoryMapper {
             @Mapping(source = "estado", target = "active"),
     })
     Category toCategory(Categoria categoria);
-
+    
+    List<Category>  toCategorys(List<Categoria> categoria);
+    
     @InheritInverseConfiguration
     @Mapping(target = "productos", ignore = true)
     Categoria toCategoria(Category category);
