@@ -35,4 +35,7 @@ public class CategoriaService {
             return true;
         }).orElse(false);
     }
+    public  Category update (Category category){
+        return categoryRepository.save(category);
+    }
 }

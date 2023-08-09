@@ -46,7 +46,13 @@ public class CategoriaRespository implements CategoryRepository{
 
     @Override
     public Optional<Category> getCategory(int categoryId) {
+        System.out.println("llega aca");
         return CategoryCrudRepository.findById(categoryId).map(categoria -> mapper.toCategory(categoria));
     }
-    
+
+    @Override
+    public Category update(Category category) {
+        Categoria categoria = mapper.toCategoria(category);
+        return mapper.toCategory(CategoryCrudRepository.save(categoria));
+    }
 }
