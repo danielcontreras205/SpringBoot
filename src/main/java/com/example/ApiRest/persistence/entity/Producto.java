@@ -32,6 +32,7 @@ public class Producto {
      * relacion de identidades
      */
     @ManyToOne
-    @JoinColumn(name = "id_categoria", insertable = false, updatable = false)
+//    @JoinColumn(name = "id_categoria", insertable = false, updatable = false) --- no insertaba
+    @JoinColumn(name = "id_categoria", insertable = true, updatable = true)
     private Categoria categoria;
 }

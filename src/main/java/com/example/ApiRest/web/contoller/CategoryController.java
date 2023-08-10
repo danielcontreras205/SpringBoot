@@ -34,26 +34,31 @@ public class CategoryController {
     public ResponseEntity<Category> save(@RequestBody Category category) {
         return new ResponseEntity<>(categoriaService.save(category), HttpStatus.CREATED);
     }
+    
     @GetMapping("/allCategory")
     public ResponseEntity<List<Category>> getAll() {
         return new ResponseEntity<>(categoriaService.getAll(), HttpStatus.OK);
     }
+    
     @GetMapping("/CategoryId/{id}")
     public ResponseEntity<Optional<Category>> getCategoryId(@PathVariable("id") int categoryId) {
         return new ResponseEntity<>(categoriaService.getCategory(categoryId), HttpStatus.OK);
     }
-    @DeleteMapping("/DeleteCategory")
     
+    @DeleteMapping("/DeleteCategory")
     public ResponseEntity<Boolean> DeleteCategory(@RequestBody Category category) {
         return new ResponseEntity<>(categoriaService.delete(category.getCategoryId()), HttpStatus.CREATED);
     }
+    
     @DeleteMapping("/DeleteCategory/{id}")
     public ResponseEntity<Boolean>DeleteCategoryId(@PathVariable("id") int categoryId){
         ResponseEntity<Boolean> ObjetoRespuesta = new ResponseEntity<>(categoriaService.delete(categoryId), HttpStatus.CREATED);
         return ObjetoRespuesta;
     }
-    @PutMapping("/UpdateCategory")
-    public ResponseEntity<Category> Update(@RequestBody Category category){
+    
+    @PutMapping("/UpdateCategory/{id}")
+    public ResponseEntity<Category> Update(@PathVariable("id") int categoryId, @RequestBody Category category){
+        category.setCategoryId(categoryId);
         return new ResponseEntity<>(categoriaService.update(category), HttpStatus.CREATED);
     }
 }

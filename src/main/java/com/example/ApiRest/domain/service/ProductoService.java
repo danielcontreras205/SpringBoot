@@ -40,4 +40,8 @@ public class ProductoService {
             return true;
         }).orElse(false);
     }
+    
+    public Product update (Product product){
+        return productRepository.save(product);
+    }
 }
