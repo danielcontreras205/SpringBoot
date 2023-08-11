@@ -12,4 +12,6 @@ public interface CustomerRepository {
     void delete(int customerId);
     
     Optional<Customer> getCustomer(int customerId);
+    
+    Customer update(Customer customer);
 }

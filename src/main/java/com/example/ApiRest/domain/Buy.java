@@ -1,5 +1,6 @@
 package com.example.ApiRest.domain;
 
+import java.time.LocalDateTime;
 import lombok.Data;
 
 @Data
@@ -7,6 +8,7 @@ public class Buy {
     private int buyId;
     private String comment;
     private String state;
-    private int customerId;
+    private LocalDateTime date;
+    private Customer customer;
     private String paymentMethod;
 }

@@ -48,5 +48,11 @@ public class ClienteRepository implements CustomerRepository{
     public Optional<Customer> getCustomer(int customerId) {
         return customerCrudRepository.findById(customerId).map(cliente -> mapper.toCustomer(cliente));
     }
+
+    @Override
+    public Customer update(Customer customer) {
+        Cliente cliente = mapper.toCliente(customer);
+        return mapper.toCustomer(customerCrudRepository.save(cliente));
+    }
     
 }

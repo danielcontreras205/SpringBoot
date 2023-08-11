@@ -21,7 +21,7 @@ import org.springframework.stereotype.Repository;
 @Repository
 public class CompraRepository implements BuyRepository{
     @Autowired
-    private BuyCrudRepository BuyCrudRepository;
+    private BuyCrudRepository buyCrudRepository;
     
     @Autowired
     private BuyMapper mapper;
@@ -31,23 +31,30 @@ public class CompraRepository implements BuyRepository{
     
     @Override
     public List<Buy> getAll() {
-        List<Compra> buys = (List)this.BuyCrudRepository.findAll();
+        List<Compra> buys = (List)this.buyCrudRepository.findAll();
         return this.mapper.toBuy(buys);
     }
 
     @Override
     public Buy save(Buy buy) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        Compra compra = mapper.toCompra(buy);
+        return mapper.toBuy(buyCrudRepository.save(compra));
     }
 
     @Override
     public Optional<Buy> getBuy(int buyId) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        return buyCrudRepository.findById(buyId).map(compras -> mapper.toBuy(compras));
     }
 
     @Override
     public void delete(int buyId) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        buyCrudRepository.deleteById(buyId);
+    }
+
+    @Override
+    public Buy update(Buy buy) {
+        Compra compra = mapper.toCompra(buy);
+        return mapper.toBuy(buyCrudRepository.save(compra));
     }
 
     

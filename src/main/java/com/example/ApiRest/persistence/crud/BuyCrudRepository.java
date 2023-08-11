@@ -13,5 +13,5 @@ import org.springframework.data.repository.CrudRepository;
  * @author AsRock
  */
 public interface BuyCrudRepository extends CrudRepository<Compra,Integer>{
-    List<Compra> findByIdCompraOrderByIdClienteAsc(int idCompra);
+    //List<Compra> findByIdCompraOrderByIdClienteAsc(int idCompra);
 }

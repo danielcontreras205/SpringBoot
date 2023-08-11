@@ -13,4 +13,6 @@ public interface BuyRepository {
     
     void delete(int buyId);
     
+    Buy update(Buy buy);
+    
 }

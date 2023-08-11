@@ -35,4 +35,7 @@ public class CompraService {
             return true;
         }).orElse(false);
     }
+    public Buy updateBuy(Buy buy){
+        return buyRepository.update(buy);
+    }
 }

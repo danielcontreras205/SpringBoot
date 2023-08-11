@@ -35,4 +35,7 @@ public class ClienteService {
             return true;
         }).orElse(false);
     }
+    public Customer updateCustumer(Customer customer){
+        return customerRepository.update(customer);
+    }
 }

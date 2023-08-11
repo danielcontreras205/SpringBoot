@@ -8,6 +8,6 @@ public class Customer {
     private String name;
     private String lastName;
     private long cell;
-    private String address;
     private String email;
+    private String address;
 }

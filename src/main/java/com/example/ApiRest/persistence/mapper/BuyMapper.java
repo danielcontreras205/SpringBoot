@@ -16,19 +16,20 @@ import org.mapstruct.Mappings;
  *
  * @author AsRock
  */
-@Mapper(componentModel = "spring")
+@Mapper(componentModel = "spring",uses = {CustomerMapper.class})
 public interface BuyMapper {
     @Mappings({
             @Mapping(source = "idCompra", target = "buyId"),
             @Mapping(source = "comentario", target = "comment"),
             @Mapping(source = "estado", target = "state"),
-            @Mapping(source = "idCliente", target = "customerId"),
+            @Mapping(source = "fecha", target = "date"),
+            @Mapping(source = "cliente", target = "customer"),
             @Mapping(source = "medioPago", target = "paymentMethod"),
     })
     Buy toBuy(Compra compra);
     List<Buy> toBuy(List<Compra> compras);
     
     @InheritInverseConfiguration
-    @Mapping(target = "cliente", ignore = true)
+    //@Mapping(target = "cliente", ignore = true)
     Compra toCompra(Buy buy);
 }
