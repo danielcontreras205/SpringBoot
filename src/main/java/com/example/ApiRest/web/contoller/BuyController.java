@@ -45,4 +45,9 @@ public class BuyController {
         buy.setBuyId(buyId);
         return new ResponseEntity<>(service.updateBuy(buy),HttpStatus.CREATED);
     }
+    
+    @GetMapping("/getSearch/{id}")
+    public ResponseEntity<List<Buy>> getSearch(@PathVariable("id") int customerId) {
+        return new ResponseEntity<>(service.search(customerId), HttpStatus.OK);
+    }
 }

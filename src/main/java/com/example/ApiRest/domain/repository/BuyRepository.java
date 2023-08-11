@@ -15,4 +15,7 @@ public interface BuyRepository {
     
     Buy update(Buy buy);
     
+    List<Buy> search(int customerId);
+    
+    List<Buy> searchNativo(int customerId);
 }

@@ -38,4 +38,7 @@ public class CompraService {
     public Buy updateBuy(Buy buy){
         return buyRepository.update(buy);
     }
+    public List<Buy> search(int customerId){
+        return buyRepository.search(customerId);
+    }
 }

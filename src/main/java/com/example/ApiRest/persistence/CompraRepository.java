@@ -57,7 +57,16 @@ public class CompraRepository implements BuyRepository{
         return mapper.toBuy(buyCrudRepository.save(compra));
     }
 
-    
+    @Override
+    public List<Buy> search(int customerId) {
+        List<Compra> buys = buyCrudRepository.search(customerId);
+        return this.mapper.toBuy(buys);
+    }
+
+    @Override
+    public List<Buy> searchNativo(int customerId) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
     
 }
         
