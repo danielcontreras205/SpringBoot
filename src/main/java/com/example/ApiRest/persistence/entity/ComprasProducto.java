@@ -13,13 +13,13 @@ import lombok.*;
 @Table(name = "compras_producto")
 public class ComprasProducto {
     @EmbeddedId
-    private ComprasProductoPK id;
+    private ComprasProductoPK primariaKey;
     
     private Integer cantidad;
     
     private Double total;
     
-    private boolean estado;
+    private String estado;
     
     @ManyToOne
     @JoinColumn(name = "id_compra", insertable = false, updatable = false)

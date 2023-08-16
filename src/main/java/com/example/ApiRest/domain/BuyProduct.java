@@ -4,10 +4,9 @@ import lombok.Data;
 
 @Data
 public class BuyProduct {
-    private int buyId;
-    private int productId;
+    private BuyProducyPK primariKey;
     private int amount;
-    private String state;
     private double total;
+    private String state;
     
 }

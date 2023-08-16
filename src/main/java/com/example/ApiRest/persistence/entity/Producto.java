@@ -1,6 +1,7 @@
 package com.example.ApiRest.persistence.entity;
 
 import jakarta.persistence.*;
+import java.util.List;
 import lombok.*;
 //------------------------------lombok------------------------------------------
 @Data
@@ -35,4 +36,7 @@ public class Producto {
 //    @JoinColumn(name = "id_categoria", insertable = false, updatable = false) --- no insertaba
     @JoinColumn(name = "id_categoria", insertable = true, updatable = true)
     private Categoria categoria;
+    
+    @OneToMany(mappedBy = "producto")
+    private List<ComprasProducto> Compra;
 }
