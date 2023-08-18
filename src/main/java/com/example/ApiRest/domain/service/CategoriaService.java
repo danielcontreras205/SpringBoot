@@ -4,7 +4,7 @@
  */
 package com.example.ApiRest.domain.service;
 
-import com.example.ApiRest.domain.Category;
+import com.example.ApiRest.dto.Category;
 import com.example.ApiRest.domain.repository.CategoryRepository;
 import java.util.List;
 import java.util.Optional;

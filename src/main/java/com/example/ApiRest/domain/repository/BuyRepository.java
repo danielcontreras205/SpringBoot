@@ -1,6 +1,6 @@
 package com.example.ApiRest.domain.repository;
 
-import com.example.ApiRest.domain.Buy;
+import com.example.ApiRest.dto.Buy;
 import java.util.List;
 import java.util.Optional;
 

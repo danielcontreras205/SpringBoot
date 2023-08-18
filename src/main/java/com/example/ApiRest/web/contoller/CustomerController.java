@@ -4,7 +4,7 @@
  */
 package com.example.ApiRest.web.contoller;
 
-import com.example.ApiRest.domain.Customer;
+import com.example.ApiRest.dto.Customer;
 import com.example.ApiRest.domain.service.ClienteService;
 import java.util.List;
 import java.util.Optional;

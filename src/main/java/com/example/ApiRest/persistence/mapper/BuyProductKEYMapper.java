@@ -1,7 +1,7 @@
 
 package com.example.ApiRest.persistence.mapper;
 
-import com.example.ApiRest.domain.BuyProducyPK;
+import com.example.ApiRest.dto.BuyProducyPK;
 import com.example.ApiRest.persistence.entity.ComprasProductoPK;
 import java.util.List;
 import org.mapstruct.InheritInverseConfiguration;

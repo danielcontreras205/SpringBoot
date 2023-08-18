@@ -1,4 +1,4 @@
-package com.example.ApiRest.domain;
+package com.example.ApiRest.dto;
 
 import lombok.Data;
 
