@@ -23,14 +23,13 @@ public class ComprasProducto {
     private String estado;
     
     @ManyToOne
-    @MapsId("idCompra")
-    @JoinColumn(name = "id_compra")
+    @MapsId("id_compra")
+    @JoinColumn(name = "id_compra", referencedColumnName = "id_compra", insertable = false, updatable = false)
     @JsonIgnore
     private Compra compra;
     
     @ManyToOne
-    @MapsId("idProducto")
-    @JoinColumn(name = "id_producto")
+    @MapsId("id_producto")
+    @JoinColumn(name = "id_producto", referencedColumnName = "id_producto", insertable = false, updatable = false)
     private Producto producto;
-    
 }
