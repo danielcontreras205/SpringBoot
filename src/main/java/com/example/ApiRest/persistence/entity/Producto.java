@@ -1,5 +1,6 @@
 package com.example.ApiRest.persistence.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import java.util.List;
 import lombok.*;
@@ -37,6 +38,7 @@ public class Producto {
     @JoinColumn(name = "id_categoria", insertable = true, updatable = true)
     private Categoria categoria;
     
-    @OneToMany(mappedBy = "producto")
-    private List<ComprasProducto> Compra;
+    @OneToMany(mappedBy = "producto", cascade = CascadeType.ALL)
+    @JsonIgnore
+    private List<ComprasProducto> comprasProducto;
 }

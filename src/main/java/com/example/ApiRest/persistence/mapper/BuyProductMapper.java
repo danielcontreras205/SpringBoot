@@ -16,7 +16,7 @@ import org.mapstruct.Mappings;
  *
  * @author AsRock
  */
-@Mapper(componentModel = "spring",uses = {BuyMapper.class,ProductMapper.class})
+@Mapper(componentModel = "spring",uses = {BuyMapper.class,ProductMapper.class,BuyProductKEYMapper.class})
 public interface BuyProductMapper {
     @Mappings({
             @Mapping(source = "primariaKey", target = "primariKey"),

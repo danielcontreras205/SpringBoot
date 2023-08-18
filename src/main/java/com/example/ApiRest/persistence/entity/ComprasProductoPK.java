@@ -8,7 +8,12 @@ import jakarta.persistence.*;
 import java.io.Serializable;
 import lombok.*;
 
+//------------------------------lombok------------------------------------------
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
+@EqualsAndHashCode
+//-------------------------------------------------------------------------
 @Embeddable
 public class ComprasProductoPK implements Serializable{
     @Column(name = "id_compra")
