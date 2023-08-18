@@ -4,7 +4,7 @@
  */
 package com.example.ApiRest.persistence;
 
-import com.example.ApiRest.dto.Buy;
+import com.example.ApiRest.domain.dto.Buy;
 import com.example.ApiRest.domain.repository.BuyRepository;
 import com.example.ApiRest.persistence.crud.BuyCrudRepository;
 import com.example.ApiRest.persistence.entity.Compra;

@@ -4,7 +4,7 @@
  */
 package com.example.ApiRest.persistence;
 
-import com.example.ApiRest.dto.Category;
+import com.example.ApiRest.domain.dto.Category;
 import com.example.ApiRest.domain.repository.CategoryRepository;
 import com.example.ApiRest.persistence.crud.CategoryCrudRepository;
 import com.example.ApiRest.persistence.entity.Categoria;

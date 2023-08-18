@@ -4,7 +4,7 @@
  */
 package com.example.ApiRest.web.contoller;
 
-import com.example.ApiRest.dto.Category;
+import com.example.ApiRest.domain.dto.Category;
 import com.example.ApiRest.domain.service.CategoriaService;
 import java.lang.annotation.Documented;
 import java.util.List;

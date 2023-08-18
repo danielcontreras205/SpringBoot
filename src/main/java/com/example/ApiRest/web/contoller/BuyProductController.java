@@ -4,7 +4,7 @@
  */
 package com.example.ApiRest.web.contoller;
 
-import com.example.ApiRest.dto.BuyProduct;
+import com.example.ApiRest.domain.dto.BuyProduct;
 import com.example.ApiRest.domain.service.CompraProductoService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;

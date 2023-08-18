@@ -4,7 +4,7 @@
  */
 package com.example.ApiRest.domain.service;
 
-import com.example.ApiRest.dto.Buy;
+import com.example.ApiRest.domain.dto.Buy;
 import com.example.ApiRest.domain.repository.BuyRepository;
 import java.util.List;
 import java.util.Optional;

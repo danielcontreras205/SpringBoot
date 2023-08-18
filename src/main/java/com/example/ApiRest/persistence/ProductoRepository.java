@@ -4,7 +4,7 @@
  */
 package com.example.ApiRest.persistence;
 
-import com.example.ApiRest.dto.Product;
+import com.example.ApiRest.domain.dto.Product;
 import com.example.ApiRest.domain.repository.ProducRepository;
 import com.example.ApiRest.persistence.crud.ProductCrudRepository;
 import com.example.ApiRest.persistence.entity.Producto;

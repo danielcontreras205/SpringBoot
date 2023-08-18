@@ -1,6 +1,6 @@
 package com.example.ApiRest.persistence.mapper;
 
-import com.example.ApiRest.dto.Category;
+import com.example.ApiRest.domain.dto.Category;
 import com.example.ApiRest.persistence.entity.Categoria;
 import java.util.List;
 import org.mapstruct.InheritInverseConfiguration;
