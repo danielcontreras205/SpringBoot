@@ -41,15 +41,15 @@ public class CompraProductoRepository implements BuyProductRepository{
     }
 
     @Override
-    public BuyProduct BuscarProductoCompra(int buyId, int productId) {
-        ComprasProducto comprasProducto = buyProductCrudRepository.BuscarProductoCompra(buyId, productId);
-        return this.mapper.toBuyProduct(comprasProducto);
+    public List<BuyProduct> BuscarProductosCompra(int buyId) {
+        List<ComprasProducto> comprasProducto = buyProductCrudRepository.BuscarProductosCompra(buyId);
+        return this.mapper.toBuyProducts(comprasProducto);
     }
     
     @Override
-    public List<BuyProduct> searchNativo(int buyId) {
-        List<ComprasProducto> buys = buyProductCrudRepository.searchNativo(buyId);
-        return this.mapper.toBuyProducts(buys);
+    public BuyProduct searchNativo(int buyId, int productId) {
+        ComprasProducto buys = buyProductCrudRepository.searchNativo(buyId,productId);
+        return this.mapper.toBuyProduct(buys);
     }
 
     @Override
@@ -57,5 +57,5 @@ public class CompraProductoRepository implements BuyProductRepository{
         ComprasProducto comprasProducto = mapper.toCompraProducto(buyProduct);
         return mapper.toBuyProduct(buyProductCrudRepository.save(comprasProducto));
     }
-
+    
 }

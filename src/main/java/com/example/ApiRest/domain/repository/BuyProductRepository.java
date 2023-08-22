@@ -6,6 +6,7 @@ package com.example.ApiRest.domain.repository;
 
 import com.example.ApiRest.domain.dto.BuyProduct;
 import com.example.ApiRest.domain.dto.BuyProducyPK;
+import com.example.ApiRest.persistence.entity.ComprasProducto;
 import java.util.List;
 import java.util.Optional;
 
@@ -18,9 +19,9 @@ public interface BuyProductRepository {
     
     BuyProduct save(BuyProduct buyProduct);
     
-    BuyProduct BuscarProductoCompra(int buyId, int productId);
+    List<BuyProduct> BuscarProductosCompra(int buyId);
     
-    List<BuyProduct> searchNativo(int customerId);
+    BuyProduct searchNativo(int buyId, int productId);
     
     BuyProduct update(BuyProduct buyProduct);
 }

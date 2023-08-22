@@ -17,14 +17,14 @@ import org.springframework.data.repository.query.Param;
  */
 public interface BuyProductCrudRepository extends CrudRepository<ComprasProducto,Integer>{
     @Query(
-        value = "SELECT * FROM compras_producto WHERE id_compra = :parametro",
-        nativeQuery = true    
-    )//nativo
-    List<ComprasProducto> searchNativo(@Param("parametro")int buyId);
-    
-    @Query(
         value = "SELECT * FROM compras_producto WHERE id_compra = :parametro AND id_producto = :parametro2",
         nativeQuery = true    
     )//nativo
-    ComprasProducto BuscarProductoCompra(@Param("parametro")int buyId,@Param("parametro2")int productId);
+    ComprasProducto searchNativo(@Param("parametro")int buyId,@Param("parametro2")int productId);
+    
+    @Query(
+        value = "SELECT * FROM compras_producto WHERE id_compra = :parametro",
+        nativeQuery = true    
+    )//nativo
+    List<ComprasProducto> BuscarProductosCompra(@Param("parametro")int buyId);
 }

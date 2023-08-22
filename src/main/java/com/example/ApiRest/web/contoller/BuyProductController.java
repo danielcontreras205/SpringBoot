@@ -5,16 +5,14 @@
 package com.example.ApiRest.web.contoller;
 
 import com.example.ApiRest.domain.dto.BuyProduct;
+import com.example.ApiRest.domain.dto.BuyProducyPK;
 import com.example.ApiRest.domain.service.CompraProductoService;
+import io.swagger.v3.oas.annotations.Parameters;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 /**
  *
@@ -34,5 +32,15 @@ public class BuyProductController {
     @PostMapping("/save")
     public ResponseEntity<BuyProduct> save(@RequestBody BuyProduct buyProduct) {
         return new ResponseEntity<>(service.save(buyProduct), HttpStatus.CREATED);
+    }
+    
+    @GetMapping("/BuscarProductosCompra/{id}")
+    public ResponseEntity<List<BuyProduct>> BuscarProductosCompra(@PathVariable("id")int byuId) {
+        return new ResponseEntity<>(service.BuscarProductosCompra(byuId), HttpStatus.OK);
+    }
+    
+    @PutMapping("/UpdateBuyProduct")
+    public ResponseEntity<BuyProduct> UpdateBuyProduct(@RequestBody BuyProduct buyProduct){
+        return new ResponseEntity<>(service.updateCustumer(buyProduct),HttpStatus.CREATED);
     }
 }

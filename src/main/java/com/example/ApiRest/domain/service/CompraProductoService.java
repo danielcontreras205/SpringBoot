@@ -26,11 +26,11 @@ public class CompraProductoService {
     public BuyProduct save(BuyProduct buyProduct){
         return buyProductRepository.save(buyProduct);
     }
-    public BuyProduct BuscarProductoCompra(int buyId, int productId) {
-        return buyProductRepository.BuscarProductoCompra(buyId, productId);
+    public List<BuyProduct> BuscarProductosCompra(int buyId) {
+        return buyProductRepository.BuscarProductosCompra(buyId);
     }
-    public List<BuyProduct> searchNativo(int buyId){
-        return buyProductRepository.searchNativo(buyId);
+    public BuyProduct searchNativo(int buyId, int productId){
+        return buyProductRepository.searchNativo(buyId,productId);
     }
     public BuyProduct updateCustumer(BuyProduct buyProduct){
         return buyProductRepository.update(buyProduct);
