@@ -24,4 +24,6 @@ public interface BuyProductRepository {
     BuyProduct searchNativo(int buyId, int productId);
     
     BuyProduct update(BuyProduct buyProduct);
+    
+    Boolean delete(int buyId, int productId);
 }

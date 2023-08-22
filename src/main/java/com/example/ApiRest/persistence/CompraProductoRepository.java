@@ -57,5 +57,10 @@ public class CompraProductoRepository implements BuyProductRepository{
         ComprasProducto comprasProducto = mapper.toCompraProducto(buyProduct);
         return mapper.toBuyProduct(buyProductCrudRepository.save(comprasProducto));
     }
+
+    @Override
+    public Boolean delete(int buyId, int productId) {
+        return buyProductCrudRepository.Delete(buyId, productId);
+    }
     
 }

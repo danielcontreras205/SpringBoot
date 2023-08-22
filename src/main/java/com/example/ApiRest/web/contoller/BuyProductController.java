@@ -43,4 +43,8 @@ public class BuyProductController {
     public ResponseEntity<BuyProduct> UpdateBuyProduct(@RequestBody BuyProduct buyProduct){
         return new ResponseEntity<>(service.updateCustumer(buyProduct),HttpStatus.CREATED);
     }
+    @DeleteMapping("/DeleteBuyProduct")
+    public ResponseEntity<Boolean> DeleteBuyProduct(@RequestBody BuyProduct buyProduct){
+        return new ResponseEntity<>(service.Delete(buyProduct),HttpStatus.CREATED);
+    }
 }

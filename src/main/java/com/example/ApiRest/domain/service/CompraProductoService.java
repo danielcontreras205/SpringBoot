@@ -35,4 +35,7 @@ public class CompraProductoService {
     public BuyProduct updateCustumer(BuyProduct buyProduct){
         return buyProductRepository.update(buyProduct);
     }
+    public Boolean Delete(BuyProduct buyProduct){
+        return buyProductRepository.delete(buyProduct.getPrimariKey().getBuyId(), buyProduct.getPrimariKey().getProductId());
+    }
 }
