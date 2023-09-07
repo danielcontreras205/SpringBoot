@@ -5,8 +5,10 @@
 package com.example.ApiRest.persistence.crud;
 
 import com.example.ApiRest.persistence.entity.ComprasProducto;
+import jakarta.transaction.Transactional;
 import java.util.List;
 import java.util.Optional;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
@@ -28,9 +30,11 @@ public interface BuyProductCrudRepository extends CrudRepository<ComprasProducto
     )//nativo
     List<ComprasProducto> BuscarProductosCompra(@Param("parametro")int buyId);
     
+    @Modifying
+    @Transactional
     @Query(
         value = "DELETE FROM compras_producto WHERE id_compra = :parametro AND id_producto = :parametro2",
         nativeQuery = true    
     )//nativo
-    Boolean Delete(@Param("parametro")int buyId,@Param("parametro2")int productId);
+    void Delete(@Param("parametro")int buyId,@Param("parametro2")int productId);
 }
