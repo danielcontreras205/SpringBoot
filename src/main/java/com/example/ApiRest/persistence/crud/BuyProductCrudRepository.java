@@ -36,5 +36,5 @@ public interface BuyProductCrudRepository extends CrudRepository<ComprasProducto
         value = "DELETE FROM compras_producto WHERE id_compra = :parametro AND id_producto = :parametro2",
         nativeQuery = true    
     )//nativo
-    void Delete(@Param("parametro")int buyId,@Param("parametro2")int productId);
+    int Delete(@Param("parametro")int buyId,@Param("parametro2")int productId);
 }

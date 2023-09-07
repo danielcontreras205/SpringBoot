@@ -60,10 +60,7 @@ public class CompraProductoRepository implements BuyProductRepository{
 
     @Override
     public Boolean delete(int buyId, int productId) {
-        buyProductCrudRepository.Delete(buyId, productId);
-        ComprasProducto buys = buyProductCrudRepository.searchNativo(buyId,productId);
-        boolean valida = (buys == null)? true : false;
-        return valida;
+        return (buyProductCrudRepository.Delete(buyId, productId) >= 1)? true : false;
     }
     
 }
