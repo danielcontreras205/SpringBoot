@@ -29,6 +29,7 @@ public class BuyProductController {
         return new ResponseEntity<>(service.getAll(), HttpStatus.OK);
     }
     
+    
     @PostMapping("/save")
     public ResponseEntity<BuyProduct> save(@RequestBody BuyProduct buyProduct) {
         return new ResponseEntity<>(service.save(buyProduct), HttpStatus.CREATED);
